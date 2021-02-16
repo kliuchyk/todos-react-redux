@@ -3,6 +3,8 @@ export type Action = { type: string; payload: any };
 export const CREATE_TODO = "CREATE_TODO";
 export const DELETE_TODO = "DELETE_TODO";
 export const SET_TODOS = "SET_TODOS";
+export const LOAD_TODOS = "LOAD_TODOS";
+export const SAVE_TODOS = "SAVE_TODOS";
 
 export interface SetTodosAction {
   type: typeof SET_TODOS;
@@ -19,4 +21,13 @@ export const setTodos = (
 ): SetTodosAction => ({
   type: SET_TODOS,
   payload,
+});
+
+export const saveTodos = (todos: SetTodosAction["payload"]) => ({
+  type: SAVE_TODOS,
+  payload: todos,
+});
+
+export const loadTodos = () => ({
+  type: LOAD_TODOS,
 });

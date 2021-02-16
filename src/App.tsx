@@ -1,7 +1,7 @@
 import { SyntheticEvent, useState, ChangeEvent } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { State, saveTodos, loadTodos } from "./redux";
-import { addTodo, DELETE_TODO } from "./actions";
+import { State } from "./redux";
+import { addTodo, loadTodos, saveTodos, DELETE_TODO } from "./actions";
 import "./App.css";
 
 function App() {
@@ -45,7 +45,7 @@ function App() {
   };
 
   const onSave = () => {
-    dispatch(saveTodos());
+    dispatch(saveTodos(todos));
   };
 
   const onLoad = () => {
